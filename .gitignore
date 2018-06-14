@@ -1,0 +1,36 @@
+.DS_Store
+.idea
+.vimrc
+.vscode
+.env
+*.log
+*.out
+*cache
+*bak
+*.backup.tar
+*.backup.tar.gz
+doc
+dist
+public
+node_modules
+logs/*
+backups/*
+uploads/*
+
+# Local tests configuration file
+services/server/Romashov.Api/appsettings.Development.json
+
+# Build results
+**/[Dd]ebug/
+**/[Dd]ebugPublic/
+**/[Rr]elease/
+**/[Rr]eleases/
+**/x64/
+**/x86/
+**/bld/
+**/[Oo]bj/
+**/[Ll]og/
+**/[Bb]in/
+
+# Personal R# code-style settings
+**/*.sln.DotSettings.user

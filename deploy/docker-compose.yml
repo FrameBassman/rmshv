@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+    proxy:
+        container_name: proxy
+        build: ./services/proxy
+        ports:
+            - "80:80"
+            - "443:443"
+        depends_on:
+            - client
+            - server
+        volumes:
+            - assets:/var/lib/romashov/assets
+            - ./uploads:/var/lib/romashov/uploads
+            - ./services/proxy/etc/nginx/conf.d:/etc/nginx/conf.d/
+    client:
+        container_name: client
+        build: ./services/client
+        volumes:
+            - assets:/var/lib/romashov/client/build
+            - ./uploads:/var/lib/romashov/uploads
+        environment:
+            - SERVICE_NAME="client"
+    server:
+        container_name: server
+        build:
+            context: .
+            dockerfile: ./services/server/Dockerfile
+        volumes:
+            - assets:/var/lib/romashov/assets
+            - ./uploads:/var/lib/romashov/uploads
+            - ./logs:/var/log
+        environment:
+            - SERVICE_NAME="server"
+        logging:
+            driver: json-file
+            options:
+                max-size: "300k"
+                max-file: "10"
+
+volumes:
+    assets:

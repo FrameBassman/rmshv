@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+    postgres:
+        build:
+            context: .
+            dockerfile: ./services/postgres/Dockerfile
+        container_name: postgres
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_DB=romashov
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=J2aKC2Tq3hdV3uEC
+        logging:
+            driver: none
+    client:
+        command: npm run build
+        volumes:
+            - ./services/client:/var/lib/romashov/client
+        environment:
+            - APP_ENV=dev
+    server:
+        container_name: server
+        build:
+            context: .
+            dockerfile: ./services/server/Dockerfile
+        ports:
+            - 3000:3000
+        volumes:
+            - ./logs:/var/log
+
+volumes:
+    pgdata:

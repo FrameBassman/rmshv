@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Romashov.Api", "Romashov.Api\Romashov.Api.csproj", "{74B6564A-6683-4644-B769-46764EBA19DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Romashov.Api.Tests", "Romashov.Api.Tests\Romashov.Api.Tests.csproj", "{C8A9A7EB-B50F-4E8C-B6F8-62588C43B8E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74B6564A-6683-4644-B769-46764EBA19DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74B6564A-6683-4644-B769-46764EBA19DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74B6564A-6683-4644-B769-46764EBA19DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74B6564A-6683-4644-B769-46764EBA19DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A9A7EB-B50F-4E8C-B6F8-62588C43B8E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A9A7EB-B50F-4E8C-B6F8-62588C43B8E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A9A7EB-B50F-4E8C-B6F8-62588C43B8E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A9A7EB-B50F-4E8C-B6F8-62588C43B8E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
