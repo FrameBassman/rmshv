@@ -11,7 +11,7 @@
 *.backup.tar.gz
 doc
 dist
-public
+
 node_modules
 logs/*
 backups/*
