@@ -23,6 +23,31 @@ stop-dev:
 		-f deploy/docker-compose.development.yml \
 		down
 
+# prod environment
+build-prod:
+	docker-compose \
+		--project-directory=${PWD} \
+		--project-name=romashov \
+		-f deploy/docker-compose.yml \
+		-f deploy/docker-compose.prod.yml \
+		build ${ARGS}
+
+start-prod:
+	docker-compose \
+		--project-directory=${PWD} \
+		--project-name=romashov \
+		-f deploy/docker-compose.yml \
+		-f deploy/docker-compose.prod.yml \
+		up -d
+
+stop-prod:
+	docker-compose \
+		--project-directory=${PWD} \
+		--project-name=romashov \
+		-f deploy/docker-compose.yml \
+		-f deploy/docker-compose.prod.yml \
+		down
+
 # clean dungling images/volumes
 docker-cleanup:
 	docker volume rm $$(docker volume ls -qf dangling=true)
