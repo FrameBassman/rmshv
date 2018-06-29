@@ -74,3 +74,9 @@ restart-proxy:
 		-f deploy/docker-compose.yml \
 		-f deploy/docker-compose.development.yml \
 		start proxy
+
+ssh-prod:
+	ssh 95.213.199.198
+
+# http://romashov.tech/.well-known/acme-challenge/6CwDT7pftLadc8ws2it2Kp7pz_7OODwLSZRmfKeUEAI
+# http://www.romashov.tech/.well-known/acme-challenge/lhFRuGx3uWoizo8YanRbA3KTKzXKGswBSSLq0uiHAMM
