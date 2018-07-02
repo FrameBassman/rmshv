@@ -55,26 +55,6 @@ docker-cleanup:
 	docker rmi $$(docker images -a --filter=dangling=true -q)
 	docker rm $$(docker ps --filter=status=exited --filter=status=created -q)
 
-restart-proxy:
-	docker-compose \
-		--project-directory=${PWD} \
-		--project-name=romashov \
-		-f deploy/docker-compose.yml \
-		-f deploy/docker-compose.development.yml \
-		stop proxy
-	docker-compose \
-		--project-directory=${PWD} \
-		--project-name=romashov \
-		-f deploy/docker-compose.yml \
-		-f deploy/docker-compose.development.yml \
-		build proxy
-	docker-compose \
-		--project-directory=${PWD} \
-		--project-name=romashov \
-		-f deploy/docker-compose.yml \
-		-f deploy/docker-compose.development.yml \
-		start proxy
-
 ssh-prod:
 	ssh 95.213.199.198
 
